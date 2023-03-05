@@ -9,6 +9,7 @@ export type Customer = {
   id: string;
   lastName: string | null;
   orders?: Array<Order>;
+  pack: string | null;
   phone: string | null;
   updatedAt: Date;
 };

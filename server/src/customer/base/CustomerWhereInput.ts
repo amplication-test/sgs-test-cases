@@ -97,6 +97,17 @@ class CustomerWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
+  pack?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
   phone?: StringNullableFilter;
 }
 
