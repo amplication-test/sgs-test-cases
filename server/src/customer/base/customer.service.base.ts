@@ -65,4 +65,8 @@ export class CustomerServiceBase {
       })
       .address();
   }
+
+  sdf() {
+    return "sdf";
+  }
 }
