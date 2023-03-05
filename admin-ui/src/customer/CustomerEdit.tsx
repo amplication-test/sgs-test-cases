@@ -32,6 +32,7 @@ export const CustomerEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={OrderTitle} />
         </ReferenceArrayInput>
+        <TextInput label="Pack" source="pack" />
         <TextInput label="Phone" source="phone" />
       </SimpleForm>
     </Edit>
