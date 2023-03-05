@@ -8,6 +8,7 @@ export type CustomerWhereInput = {
   email?: StringNullableFilter;
   firstName?: StringNullableFilter;
   id?: StringFilter;
+  kal?: StringNullableFilter;
   lastName?: StringNullableFilter;
   orders?: OrderListRelationFilter;
   pack?: StringNullableFilter;

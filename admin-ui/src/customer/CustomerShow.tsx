@@ -26,6 +26,7 @@ export const CustomerShow = (props: ShowProps): React.ReactElement => {
         <TextField label="Email" source="email" />
         <TextField label="First Name" source="firstName" />
         <TextField label="ID" source="id" />
+        <TextField label="Kal" source="kal" />
         <TextField label="Last Name" source="lastName" />
         <TextField label="Pack" source="pack" />
         <TextField label="Phone" source="phone" />

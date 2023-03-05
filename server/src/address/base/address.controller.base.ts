@@ -235,6 +235,7 @@ export class AddressControllerBase {
         email: true,
         firstName: true,
         id: true,
+        kal: true,
         lastName: true,
         pack: true,
         phone: true,

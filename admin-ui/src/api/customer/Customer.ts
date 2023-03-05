@@ -7,6 +7,7 @@ export type Customer = {
   email: string | null;
   firstName: string | null;
   id: string;
+  kal: string | null;
   lastName: string | null;
   orders?: Array<Order>;
   pack: string | null;

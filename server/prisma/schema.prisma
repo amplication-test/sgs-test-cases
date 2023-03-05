@@ -38,6 +38,7 @@ model Customer {
   email     String?
   firstName String?
   id        String   @id @default(cuid())
+  kal       String?
   lastName  String?
   orders    Order[]
   pack      String?

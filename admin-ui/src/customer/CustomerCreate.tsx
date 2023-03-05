@@ -23,6 +23,7 @@ export const CustomerCreate = (props: CreateProps): React.ReactElement => {
         </ReferenceInput>
         <TextInput label="Email" source="email" type="email" />
         <TextInput label="First Name" source="firstName" />
+        <TextInput label="Kal" source="kal" />
         <TextInput label="Last Name" source="lastName" />
         <ReferenceArrayInput
           source="orders"

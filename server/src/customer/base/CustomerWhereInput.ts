@@ -74,6 +74,17 @@ class CustomerWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
+  kal?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
   lastName?: StringNullableFilter;
 
   @ApiProperty({

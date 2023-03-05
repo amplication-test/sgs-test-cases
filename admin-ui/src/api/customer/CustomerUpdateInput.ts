@@ -5,6 +5,7 @@ export type CustomerUpdateInput = {
   address?: AddressWhereUniqueInput | null;
   email?: string | null;
   firstName?: string | null;
+  kal?: string | null;
   lastName?: string | null;
   orders?: OrderUpdateManyWithoutCustomersInput;
   pack?: string | null;
