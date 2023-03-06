@@ -2,11 +2,12 @@ import { AddressWhereUniqueInput } from "../address/AddressWhereUniqueInput";
 import { OrderUpdateManyWithoutCustomersInput } from "./OrderUpdateManyWithoutCustomersInput";
 
 export type CustomerUpdateInput = {
+  kal?: string | null;
   address?: AddressWhereUniqueInput | null;
-  email?: string | null;
+  pack?: string | null;
   firstName?: string | null;
   lastName?: string | null;
-  orders?: OrderUpdateManyWithoutCustomersInput;
-  pack?: string | null;
+  email?: string | null;
   phone?: string | null;
+  orders?: OrderUpdateManyWithoutCustomersInput;
 };

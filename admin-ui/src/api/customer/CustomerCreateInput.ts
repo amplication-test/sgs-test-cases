@@ -2,11 +2,12 @@ import { AddressWhereUniqueInput } from "../address/AddressWhereUniqueInput";
 import { OrderCreateNestedManyWithoutCustomersInput } from "./OrderCreateNestedManyWithoutCustomersInput";
 
 export type CustomerCreateInput = {
+  kal?: string | null;
   address?: AddressWhereUniqueInput | null;
-  email?: string | null;
+  pack?: string | null;
   firstName?: string | null;
   lastName?: string | null;
-  orders?: OrderCreateNestedManyWithoutCustomersInput;
-  pack?: string | null;
+  email?: string | null;
   phone?: string | null;
+  orders?: OrderCreateNestedManyWithoutCustomersInput;
 };

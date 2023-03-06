@@ -1,5 +1,5 @@
 export type Ofek = {
-  createdAt: Date;
-  id: string;
   updatedAt: Date;
+  id: string;
+  createdAt: Date;
 };

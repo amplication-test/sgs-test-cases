@@ -19,26 +19,26 @@ import { OfekService } from "../ofek.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
-  createdAt: new Date(),
-  id: "exampleId",
   updatedAt: new Date(),
+  id: "exampleId",
+  createdAt: new Date(),
 };
 const CREATE_RESULT = {
-  createdAt: new Date(),
-  id: "exampleId",
   updatedAt: new Date(),
+  id: "exampleId",
+  createdAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
-    createdAt: new Date(),
-    id: "exampleId",
     updatedAt: new Date(),
+    id: "exampleId",
+    createdAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
-  createdAt: new Date(),
-  id: "exampleId",
   updatedAt: new Date(),
+  id: "exampleId",
+  createdAt: new Date(),
 };
 
 const service = {
@@ -123,8 +123,8 @@ describe("Ofek", () => {
       .expect(HttpStatus.CREATED)
       .expect({
         ...CREATE_RESULT,
-        createdAt: CREATE_RESULT.createdAt.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
+        createdAt: CREATE_RESULT.createdAt.toISOString(),
       });
   });
 
@@ -135,8 +135,8 @@ describe("Ofek", () => {
       .expect([
         {
           ...FIND_MANY_RESULT[0],
-          createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
           updatedAt: FIND_MANY_RESULT[0].updatedAt.toISOString(),
+          createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
         },
       ]);
   });
@@ -158,8 +158,8 @@ describe("Ofek", () => {
       .expect(HttpStatus.OK)
       .expect({
         ...FIND_ONE_RESULT,
-        createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
         updatedAt: FIND_ONE_RESULT.updatedAt.toISOString(),
+        createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
       });
   });
 
@@ -171,8 +171,8 @@ describe("Ofek", () => {
       .expect(HttpStatus.CREATED)
       .expect({
         ...CREATE_RESULT,
-        createdAt: CREATE_RESULT.createdAt.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
+        createdAt: CREATE_RESULT.createdAt.toISOString(),
       })
       .then(function () {
         agent

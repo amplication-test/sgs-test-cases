@@ -4,9 +4,9 @@ import {
   Edit,
   SimpleForm,
   EditProps,
+  TextInput,
   ReferenceInput,
   SelectInput,
-  TextInput,
   ReferenceArrayInput,
   SelectArrayInput,
 } from "react-admin";
@@ -18,12 +18,15 @@ export const CustomerEdit = (props: EditProps): React.ReactElement => {
   return (
     <Edit {...props}>
       <SimpleForm>
+        <TextInput label="Kal" source="kal" />
         <ReferenceInput source="address.id" reference="Address" label="Address">
           <SelectInput optionText={AddressTitle} />
         </ReferenceInput>
-        <TextInput label="Email" source="email" type="email" />
+        <TextInput label="Pack" source="pack" />
         <TextInput label="First Name" source="firstName" />
         <TextInput label="Last Name" source="lastName" />
+        <TextInput label="Email" source="email" type="email" />
+        <TextInput label="Phone" source="phone" />
         <ReferenceArrayInput
           source="orders"
           reference="Order"
@@ -32,8 +35,6 @@ export const CustomerEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={OrderTitle} />
         </ReferenceArrayInput>
-        <TextInput label="Pack" source="pack" />
-        <TextInput label="Phone" source="phone" />
       </SimpleForm>
     </Edit>
   );

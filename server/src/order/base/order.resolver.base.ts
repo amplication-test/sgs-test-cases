@@ -25,8 +25,8 @@ import { DeleteOrderArgs } from "./DeleteOrderArgs";
 import { OrderFindManyArgs } from "./OrderFindManyArgs";
 import { OrderFindUniqueArgs } from "./OrderFindUniqueArgs";
 import { Order } from "./Order";
-import { Customer } from "../../customer/base/Customer";
 import { Product } from "../../product/base/Product";
+import { Customer } from "../../customer/base/Customer";
 import { OrderService } from "../order.service";
 @common.UseGuards(GqlDefaultAuthGuard, gqlACGuard.GqlACGuard)
 @graphql.Resolver(() => Order)
@@ -96,15 +96,15 @@ export class OrderResolverBase {
       data: {
         ...args.data,
 
-        customer: args.data.customer
-          ? {
-              connect: args.data.customer,
-            }
-          : undefined,
-
         product: args.data.product
           ? {
               connect: args.data.product,
+            }
+          : undefined,
+
+        customer: args.data.customer
+          ? {
+              connect: args.data.customer,
             }
           : undefined,
       },
@@ -127,15 +127,15 @@ export class OrderResolverBase {
         data: {
           ...args.data,
 
-          customer: args.data.customer
-            ? {
-                connect: args.data.customer,
-              }
-            : undefined,
-
           product: args.data.product
             ? {
                 connect: args.data.product,
+              }
+            : undefined,
+
+          customer: args.data.customer
+            ? {
+                connect: args.data.customer,
               }
             : undefined,
         },
@@ -172,22 +172,6 @@ export class OrderResolverBase {
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
-  @graphql.ResolveField(() => Customer, { nullable: true })
-  @nestAccessControl.UseRoles({
-    resource: "Customer",
-    action: "read",
-    possession: "any",
-  })
-  async customer(@graphql.Parent() parent: Order): Promise<Customer | null> {
-    const result = await this.service.getCustomer(parent.id);
-
-    if (!result) {
-      return null;
-    }
-    return result;
-  }
-
-  @common.UseInterceptors(AclFilterResponseInterceptor)
   @graphql.ResolveField(() => Product, { nullable: true })
   @nestAccessControl.UseRoles({
     resource: "Product",
@@ -196,6 +180,22 @@ export class OrderResolverBase {
   })
   async product(@graphql.Parent() parent: Order): Promise<Product | null> {
     const result = await this.service.getProduct(parent.id);
+
+    if (!result) {
+      return null;
+    }
+    return result;
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @graphql.ResolveField(() => Customer, { nullable: true })
+  @nestAccessControl.UseRoles({
+    resource: "Customer",
+    action: "read",
+    possession: "any",
+  })
+  async customer(@graphql.Parent() parent: Order): Promise<Customer | null> {
+    const result = await this.service.getCustomer(parent.id);
 
     if (!result) {
       return null;
