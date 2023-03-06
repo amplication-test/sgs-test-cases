@@ -51,39 +51,37 @@ export class OrderControllerBase {
       data: {
         ...data,
 
-        customer: data.customer
-          ? {
-              connect: data.customer,
-            }
-          : undefined,
-
         product: data.product
           ? {
               connect: data.product,
             }
           : undefined,
+
+        customer: data.customer
+          ? {
+              connect: data.customer,
+            }
+          : undefined,
       },
       select: {
-        createdAt: true,
-
-        customer: {
-          select: {
-            id: true,
-          },
-        },
-
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
 
-        quantity: true,
-        totalPrice: true,
+        id: true,
+        createdAt: true,
         updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
+
+        customer: {
+          select: {
+            id: true,
+          },
+        },
       },
     });
   }
@@ -105,26 +103,24 @@ export class OrderControllerBase {
     return this.service.findMany({
       ...args,
       select: {
-        createdAt: true,
-
-        customer: {
-          select: {
-            id: true,
-          },
-        },
-
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
 
-        quantity: true,
-        totalPrice: true,
+        id: true,
+        createdAt: true,
         updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
+
+        customer: {
+          select: {
+            id: true,
+          },
+        },
       },
     });
   }
@@ -147,26 +143,24 @@ export class OrderControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        createdAt: true,
-
-        customer: {
-          select: {
-            id: true,
-          },
-        },
-
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
 
-        quantity: true,
-        totalPrice: true,
+        id: true,
+        createdAt: true,
         updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
+
+        customer: {
+          select: {
+            id: true,
+          },
+        },
       },
     });
     if (result === null) {
@@ -199,39 +193,37 @@ export class OrderControllerBase {
         data: {
           ...data,
 
-          customer: data.customer
-            ? {
-                connect: data.customer,
-              }
-            : undefined,
-
           product: data.product
             ? {
                 connect: data.product,
               }
             : undefined,
+
+          customer: data.customer
+            ? {
+                connect: data.customer,
+              }
+            : undefined,
         },
         select: {
-          createdAt: true,
-
-          customer: {
-            select: {
-              id: true,
-            },
-          },
-
-          discount: true,
-          id: true,
-
           product: {
             select: {
               id: true,
             },
           },
 
-          quantity: true,
-          totalPrice: true,
+          id: true,
+          createdAt: true,
           updatedAt: true,
+          quantity: true,
+          discount: true,
+          totalPrice: true,
+
+          customer: {
+            select: {
+              id: true,
+            },
+          },
         },
       });
     } catch (error) {
@@ -262,26 +254,24 @@ export class OrderControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          createdAt: true,
-
-          customer: {
-            select: {
-              id: true,
-            },
-          },
-
-          discount: true,
-          id: true,
-
           product: {
             select: {
               id: true,
             },
           },
 
-          quantity: true,
-          totalPrice: true,
+          id: true,
+          createdAt: true,
           updatedAt: true,
+          quantity: true,
+          discount: true,
+          totalPrice: true,
+
+          customer: {
+            select: {
+              id: true,
+            },
+          },
         },
       });
     } catch (error) {

@@ -22,7 +22,7 @@ class Ofek {
   @IsDate()
   @Type(() => Date)
   @Field(() => Date)
-  createdAt!: Date;
+  updatedAt!: Date;
 
   @ApiProperty({
     required: true,
@@ -38,7 +38,7 @@ class Ofek {
   @IsDate()
   @Type(() => Date)
   @Field(() => Date)
-  updatedAt!: Date;
+  createdAt!: Date;
 }
 
 export { Ofek as Ofek };

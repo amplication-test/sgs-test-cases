@@ -53,12 +53,12 @@ export class ProductControllerBase {
     return await this.service.create({
       data: data,
       select: {
-        createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        createdAt: true,
         updatedAt: true,
+        name: true,
+        itemPrice: true,
+        description: true,
       },
     });
   }
@@ -80,12 +80,12 @@ export class ProductControllerBase {
     return this.service.findMany({
       ...args,
       select: {
-        createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        createdAt: true,
         updatedAt: true,
+        name: true,
+        itemPrice: true,
+        description: true,
       },
     });
   }
@@ -108,12 +108,12 @@ export class ProductControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        createdAt: true,
         updatedAt: true,
+        name: true,
+        itemPrice: true,
+        description: true,
       },
     });
     if (result === null) {
@@ -145,12 +145,12 @@ export class ProductControllerBase {
         where: params,
         data: data,
         select: {
-          createdAt: true,
-          description: true,
           id: true,
-          itemPrice: true,
-          name: true,
+          createdAt: true,
           updatedAt: true,
+          name: true,
+          itemPrice: true,
+          description: true,
         },
       });
     } catch (error) {
@@ -181,12 +181,12 @@ export class ProductControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          createdAt: true,
-          description: true,
           id: true,
-          itemPrice: true,
-          name: true,
+          createdAt: true,
           updatedAt: true,
+          name: true,
+          itemPrice: true,
+          description: true,
         },
       });
     } catch (error) {
@@ -215,26 +215,24 @@ export class ProductControllerBase {
     const results = await this.service.findOrders(params.id, {
       ...query,
       select: {
-        createdAt: true,
-
-        customer: {
-          select: {
-            id: true,
-          },
-        },
-
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
 
-        quantity: true,
-        totalPrice: true,
+        id: true,
+        createdAt: true,
         updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
+
+        customer: {
+          select: {
+            id: true,
+          },
+        },
       },
     });
     if (results === null) {

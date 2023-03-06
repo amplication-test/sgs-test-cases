@@ -11,13 +11,24 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+import { IsString, IsOptional, ValidateNested } from "class-validator";
 import { AddressWhereUniqueInput } from "../../address/base/AddressWhereUniqueInput";
-import { ValidateNested, IsOptional, IsString } from "class-validator";
 import { Type } from "class-transformer";
 import { OrderUpdateManyWithoutCustomersInput } from "./OrderUpdateManyWithoutCustomersInput";
 
 @InputType()
 class CustomerUpdateInput {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  kal?: string | null;
+
   @ApiProperty({
     required: false,
     type: () => AddressWhereUniqueInput,
@@ -39,7 +50,7 @@ class CustomerUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  email?: string | null;
+  pack?: string | null;
 
   @ApiProperty({
     required: false,
@@ -61,7 +72,7 @@ class CustomerUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  kal?: string | null;
+  lastName?: string | null;
 
   @ApiProperty({
     required: false,
@@ -72,7 +83,18 @@ class CustomerUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  lastName?: string | null;
+  email?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  phone?: string | null;
 
   @ApiProperty({
     required: false,
@@ -85,28 +107,6 @@ class CustomerUpdateInput {
     nullable: true,
   })
   orders?: OrderUpdateManyWithoutCustomersInput;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  pack?: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  phone?: string | null;
 }
 
 export { CustomerUpdateInput as CustomerUpdateInput };

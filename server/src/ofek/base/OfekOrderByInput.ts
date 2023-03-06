@@ -25,7 +25,7 @@ class OfekOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  createdAt?: SortOrder;
+  updatedAt?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -43,7 +43,7 @@ class OfekOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  updatedAt?: SortOrder;
+  createdAt?: SortOrder;
 }
 
 export { OfekOrderByInput as OfekOrderByInput };
