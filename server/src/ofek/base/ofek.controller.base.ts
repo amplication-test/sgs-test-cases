@@ -50,8 +50,8 @@ export class OfekControllerBase {
     return await this.service.create({
       data: data,
       select: {
-        createdAt: true,
         id: true,
+        createdAt: true,
         updatedAt: true,
       },
     });
@@ -74,8 +74,8 @@ export class OfekControllerBase {
     return this.service.findMany({
       ...args,
       select: {
-        createdAt: true,
         id: true,
+        createdAt: true,
         updatedAt: true,
       },
     });
@@ -99,8 +99,8 @@ export class OfekControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        createdAt: true,
         id: true,
+        createdAt: true,
         updatedAt: true,
       },
     });
@@ -133,8 +133,8 @@ export class OfekControllerBase {
         where: params,
         data: data,
         select: {
-          createdAt: true,
           id: true,
+          createdAt: true,
           updatedAt: true,
         },
       });
@@ -166,8 +166,8 @@ export class OfekControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          createdAt: true,
           id: true,
+          createdAt: true,
           updatedAt: true,
         },
       });

@@ -1,13 +1,13 @@
-import { AddressWhereUniqueInput } from "../address/AddressWhereUniqueInput";
 import { OrderCreateNestedManyWithoutCustomersInput } from "./OrderCreateNestedManyWithoutCustomersInput";
+import { AddressWhereUniqueInput } from "../address/AddressWhereUniqueInput";
 
 export type CustomerCreateInput = {
-  address?: AddressWhereUniqueInput | null;
-  email?: string | null;
   firstName?: string | null;
-  kal?: string | null;
   lastName?: string | null;
-  orders?: OrderCreateNestedManyWithoutCustomersInput;
-  pack?: string | null;
+  email?: string | null;
   phone?: string | null;
+  orders?: OrderCreateNestedManyWithoutCustomersInput;
+  address?: AddressWhereUniqueInput | null;
+  pack?: string | null;
+  kal?: string | null;
 };
