@@ -11,12 +11,14 @@
     "db:migrate-save": "prisma migrate dev",
     "db:migrate-up": "prisma migrate deploy",
     "db:clean": "ts-node scripts/clean.ts",
-    "db:init": "run-s \"db:migrate-save -- --name 'initial version'\" db:migrate-up seed",
+    "db:init": "run-s seed",
     "prisma:generate": "prisma generate",
     "docker:db": "docker-compose -f docker-compose.db.yml up -d",
     "docker:build": "docker build .",
     "compose:up": "docker-compose up -d",
-    "compose:down": "docker-compose down --volumes"
+    "compose:down": "docker-compose down --volumes",
+    "prisma:pull": "prisma db pull",
+    "prisma:push": " prisma db push"
   },
   "dependencies": {
     "@nestjs/common": "9.3.9",

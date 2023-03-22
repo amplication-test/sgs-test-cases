@@ -61,20 +61,22 @@ export class CustomerControllerBase {
           : undefined,
       },
       select: {
+        id: true,
+        createdAt: true,
+        updatedAt: true,
+        firstName: true,
+        lastName: true,
+        email: true,
+        phone: true,
+
         address: {
           select: {
             id: true,
           },
         },
 
-        createdAt: true,
-        email: true,
-        firstName: true,
-        id: true,
-        lastName: true,
         pack: true,
-        phone: true,
-        updatedAt: true,
+        kal: true,
       },
     });
   }
@@ -96,20 +98,22 @@ export class CustomerControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        id: true,
+        createdAt: true,
+        updatedAt: true,
+        firstName: true,
+        lastName: true,
+        email: true,
+        phone: true,
+
         address: {
           select: {
             id: true,
           },
         },
 
-        createdAt: true,
-        email: true,
-        firstName: true,
-        id: true,
-        lastName: true,
         pack: true,
-        phone: true,
-        updatedAt: true,
+        kal: true,
       },
     });
   }
@@ -132,20 +136,22 @@ export class CustomerControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        id: true,
+        createdAt: true,
+        updatedAt: true,
+        firstName: true,
+        lastName: true,
+        email: true,
+        phone: true,
+
         address: {
           select: {
             id: true,
           },
         },
 
-        createdAt: true,
-        email: true,
-        firstName: true,
-        id: true,
-        lastName: true,
         pack: true,
-        phone: true,
-        updatedAt: true,
+        kal: true,
       },
     });
     if (result === null) {
@@ -185,20 +191,22 @@ export class CustomerControllerBase {
             : undefined,
         },
         select: {
+          id: true,
+          createdAt: true,
+          updatedAt: true,
+          firstName: true,
+          lastName: true,
+          email: true,
+          phone: true,
+
           address: {
             select: {
               id: true,
             },
           },
 
-          createdAt: true,
-          email: true,
-          firstName: true,
-          id: true,
-          lastName: true,
           pack: true,
-          phone: true,
-          updatedAt: true,
+          kal: true,
         },
       });
     } catch (error) {
@@ -229,20 +237,22 @@ export class CustomerControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          id: true,
+          createdAt: true,
+          updatedAt: true,
+          firstName: true,
+          lastName: true,
+          email: true,
+          phone: true,
+
           address: {
             select: {
               id: true,
             },
           },
 
-          createdAt: true,
-          email: true,
-          firstName: true,
-          id: true,
-          lastName: true,
           pack: true,
-          phone: true,
-          updatedAt: true,
+          kal: true,
         },
       });
     } catch (error) {
@@ -271,7 +281,12 @@ export class CustomerControllerBase {
     const results = await this.service.findOrders(params.id, {
       ...query,
       select: {
+        id: true,
         createdAt: true,
+        updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
 
         customer: {
           select: {
@@ -279,18 +294,11 @@ export class CustomerControllerBase {
           },
         },
 
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
-
-        quantity: true,
-        totalPrice: true,
-        updatedAt: true,
       },
     });
     if (results === null) {
